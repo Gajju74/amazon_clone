@@ -5,6 +5,7 @@ const mongoDB = require("./db")
 mongoDB();
 const PORT = process.env.PORT || 8000
 
+const DefaultData = require("./Defaultdata");
 
 app.get('/', function(req, res) {
   res.send('hello world')
@@ -21,3 +22,6 @@ app.use('/api', require("./Router/Orderdata"))
 app.listen(PORT, function(req, res) {
     console.log(`Server start at port no ${PORT}`);
 });
+
+
+DefaultData();
